@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "kafkastreaming"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "eaeb5eb6-da41-4082-abd1-4972f5ab6c3a"
+  }
+}
