@@ -1,0 +1,55 @@
+{
+  "sources": [
+    {
+      "id": "d05578a0-8be2-4732-b673-0eff41b14944",
+      "name": "ConfluentCloud",
+      "type": "ConfluentCloud",
+      "properties": {
+        "dataConnectionId": "b490e801-1903-4cdc-ab35-cc6165330b57",
+        "topic": "orders",
+        "consumerGroupName": "python-group-1",
+        "autoOffsetReset": "Earliest"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "id": "a31bfa46-d221-444f-b3bb-d9107acf06ff",
+      "name": "kafka-sink",
+      "type": "Lakehouse",
+      "properties": {
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "2fd8fe0c-3ac8-4a8a-b56e-371692125c55",
+        "schema": "",
+        "deltaTable": "kafka_stream_data",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "kafka_streaming-stream"
+        }
+      ],
+      "inputSchemas": []
+    }
+  ],
+  "streams": [
+    {
+      "id": "f6e8be16-6b74-47e8-b3b4-df52e747eb3b",
+      "name": "kafka_streaming-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "ConfluentCloud"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.0"
+}

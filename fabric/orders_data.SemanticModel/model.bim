@@ -16,7 +16,7 @@
       },
       {
         "name": "PBI_ProTooling",
-        "value": "[\"WebModelingEdit\"]"
+        "value": "[\"WebModelingEdit\",\"CalcGroup\"]"
       }
     ],
     "collation": "Latin1_General_100_BIN2_UTF8",
@@ -38,6 +38,7 @@
       "returnErrorValuesAsNull": true
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "discourageImplicitMeasures": true,
     "expressions": [
       {
         "name": "DatabaseQuery",
@@ -164,15 +165,34 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isCustom\":true}"
               }
             ],
-            "dataType": "int64",
-            "formatString": "0",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              },
+              {
+                "property": "FormatString"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
             "lineageTag": "4416ee27-eddf-4f2a-a32c-8f76c39c0edd",
             "sourceColumn": "Order Date",
             "sourceLineageTag": "Order Date",
-            "sourceProviderType": "bigint",
-            "summarizeBy": "sum"
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
           },
           {
             "name": "Order Delivery Address",
@@ -239,18 +259,6 @@
           }
         ],
         "lineageTag": "9ae31ba4-5c69-4e38-b7a4-dd559053b0c6",
-        "measures": [
-          {
-            "name": "Measure",
-            "annotations": [
-              {
-                "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
-                "value": "True"
-              }
-            ],
-            "lineageTag": "dcd7f6da-ddc0-4946-98d7-2a3b57a083e9"
-          }
-        ],
         "partitions": [
           {
             "name": "kafka_stream_data",
