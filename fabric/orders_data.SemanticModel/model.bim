@@ -1,0 +1,326 @@
+{
+  "compatibilityLevel": 1604,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.139.7496.1 (Main)+061188de2d27b556d0c15d8f70c4426f68783390"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DatabaseQuery\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"WebModelingEdit\"]"
+      }
+    ],
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "annotations": [
+          {
+            "name": "PBI_IncludeFutureArtifacts",
+            "value": "False"
+          }
+        ],
+        "expression": [
+          "let",
+          "    database = Sql.Database(\"N4PIRIZP7GOEJN7G5HPVN3NPGA-6AZO3T2KTR5ENHRDA6XZ3CJZBA.datawarehouse.fabric.microsoft.com\", \"b771a0d7-815b-492b-b45b-740690f2e908\")",
+          "in",
+          "    database"
+        ],
+        "kind": "m",
+        "lineageTag": "d54dbc2c-4d2b-4432-b0a7-56d5437a7f68"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "0c389be1-0ecc-f929-0ec2-c8930698e08d",
+        "fromColumn": "Product ID",
+        "fromTable": "kafka_stream_data",
+        "toColumn": "Product_ID",
+        "toTable": "product_details"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "kafka_stream_data",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Order ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7f7f307f-0cb3-4414-9a6f-784335e65493",
+            "sourceColumn": "Order ID",
+            "sourceLineageTag": "Order ID",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Customer Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "28ea2aae-e1b4-4644-a880-6b39b4370574",
+            "sourceColumn": "Customer Name",
+            "sourceLineageTag": "Customer Name",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e4b47f9e-9508-466e-8fef-939dd28b630b",
+            "sourceColumn": "Product ID",
+            "sourceLineageTag": "Product ID",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quantity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fbcd8d14-50ce-43d5-b573-d165274af5f7",
+            "sourceColumn": "Quantity",
+            "sourceLineageTag": "Quantity",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Price",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d30497d2-ca47-4989-879c-850640c0b7c6",
+            "sourceColumn": "Price",
+            "sourceLineageTag": "Price",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Order Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4416ee27-eddf-4f2a-a32c-8f76c39c0edd",
+            "sourceColumn": "Order Date",
+            "sourceLineageTag": "Order Date",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Order Delivery Address",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c83b2367-7b7e-4029-891c-243e5233ce46",
+            "sourceColumn": "Order Delivery Address",
+            "sourceLineageTag": "Order Delivery Address",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EventProcessedUtcTime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "4bbff8c3-2f09-4698-b098-4914b667768a",
+            "sourceColumn": "EventProcessedUtcTime",
+            "sourceLineageTag": "EventProcessedUtcTime",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PartitionId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6e0fbe1d-6316-48be-9ec4-bf63207846df",
+            "sourceColumn": "PartitionId",
+            "sourceLineageTag": "PartitionId",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "EventEnqueuedUtcTime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "760742df-08ac-42c2-9d28-097b9d197cb1",
+            "sourceColumn": "EventEnqueuedUtcTime",
+            "sourceLineageTag": "EventEnqueuedUtcTime",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9ae31ba4-5c69-4e38-b7a4-dd559053b0c6",
+        "measures": [
+          {
+            "name": "Measure",
+            "annotations": [
+              {
+                "name": "43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c",
+                "value": "True"
+              }
+            ],
+            "lineageTag": "dcd7f6da-ddc0-4946-98d7-2a3b57a083e9"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "kafka_stream_data",
+            "mode": "directLake",
+            "source": {
+              "entityName": "kafka_stream_data",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[kafka_stream_data]"
+      },
+      {
+        "name": "product_details",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Product_ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d727e749-d4ad-4615-b606-fc060297e999",
+            "sourceColumn": "Product_ID",
+            "sourceLineageTag": "Product_ID",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product_Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f5518bbc-706f-4bc3-ba26-1f66c8a90d86",
+            "sourceColumn": "Product_Name",
+            "sourceLineageTag": "Product_Name",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "216a8994-150a-4aca-a784-9951df94b29d",
+        "partitions": [
+          {
+            "name": "product_details",
+            "mode": "directLake",
+            "source": {
+              "entityName": "product_details",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[product_details]"
+      }
+    ]
+  }
+}
