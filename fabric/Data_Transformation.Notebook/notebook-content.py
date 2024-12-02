@@ -50,16 +50,5 @@ df.write.format('parquet').mode('overwrite').save('abfss://stgfolder@streamingst
 # META   "language_group": "synapse_pyspark"
 # META }
 
-# CELL ********************
-
-spark.read.format('csv').load("Files/product")
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
 # MARKDOWN ********************
 
