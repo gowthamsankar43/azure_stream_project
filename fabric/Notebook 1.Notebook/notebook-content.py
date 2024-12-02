@@ -17,20 +17,7 @@
 
 # CELL ********************
 
-# Welcome to your new notebook
-# Type here in the cell editor to add code!
-
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-df = spark.sql("SELECT * FROM data_storage.stg_table")
+df = spark.sql("SELECT orderid,itemid,orderunits,address,EventProcessedUtcTime FROM data_storage.stg_table")
 display(df)
 
 # METADATA ********************
