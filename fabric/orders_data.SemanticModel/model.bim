@@ -93,6 +93,11 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "SummarizeBy"
+              }
+            ],
             "dataType": "string",
             "lineageTag": "7f7f307f-0cb3-4414-9a6f-784335e65493",
             "sourceColumn": "Order ID",
@@ -140,16 +145,21 @@
               },
               {
                 "name": "PBI_FormatHint",
-                "value": "{\"isDecimal\":true}"
+                "value": "{\"isGeneralNumber\":true}"
               }
             ],
             "changedProperties": [
               {
                 "property": "DataType"
+              },
+              {
+                "property": "FormatString"
+              },
+              {
+                "property": "SummarizeBy"
               }
             ],
             "dataType": "double",
-            "formatString": "0",
             "lineageTag": "fbcd8d14-50ce-43d5-b573-d165274af5f7",
             "sourceColumn": "Quantity",
             "sourceLineageTag": "Quantity",
@@ -162,15 +172,24 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
               }
             ],
             "changedProperties": [
               {
                 "property": "FormatString"
+              },
+              {
+                "property": "SummarizeBy"
+              },
+              {
+                "property": "IsHidden"
               }
             ],
             "dataType": "double",
-            "formatString": "0.00",
             "lineageTag": "d30497d2-ca47-4989-879c-850640c0b7c6",
             "sourceColumn": "Price",
             "sourceLineageTag": "Price",
@@ -206,6 +225,7 @@
             ],
             "dataType": "dateTime",
             "formatString": "yyyy-mm-dd",
+            "isNullable": false,
             "lineageTag": "4416ee27-eddf-4f2a-a32c-8f76c39c0edd",
             "sourceColumn": "Order Date",
             "sourceLineageTag": "Order Date",
@@ -295,6 +315,62 @@
           }
         ],
         "lineageTag": "9ae31ba4-5c69-4e38-b7a4-dd559053b0c6",
+        "measures": [
+          {
+            "name": "Total_Price",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "expression": "SUM(kafka_stream_data[Price])",
+            "lineageTag": "818d9c0f-d59a-41d9-9ebc-379cb2e598ce"
+          },
+          {
+            "name": "Total_Orders",
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "expression": "COUNT(kafka_stream_data[Order ID])",
+            "formatString": "0",
+            "lineageTag": "5db12103-bf03-4f7b-8887-9dbcb7015b1b"
+          },
+          {
+            "name": "Total_Quantity",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "expression": "SUM(kafka_stream_data[Quantity])",
+            "lineageTag": "79761905-7d83-4679-b04f-f42ea5231508"
+          },
+          {
+            "name": "Monthwise",
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "expression": "GROUPBY(date_dimension,date_dimension[Month])",
+            "formatString": "0",
+            "lineageTag": "1b90466b-c465-40bf-aa02-f33dc39e8956"
+          }
+        ],
         "partitions": [
           {
             "name": "kafka_stream_data",
@@ -460,10 +536,21 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SummarizeBy"
+              },
+              {
+                "property": "FormatString"
               }
             ],
             "dataType": "int64",
-            "formatString": "0",
             "lineageTag": "bcbb09ae-472d-41ea-a41f-373b0438d54f",
             "sourceColumn": "Month",
             "sourceLineageTag": "Month",
