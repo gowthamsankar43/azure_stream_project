@@ -65,6 +65,13 @@
         "fromTable": "kafka_stream_data",
         "toColumn": "Product_ID",
         "toTable": "product_details"
+      },
+      {
+        "name": "981c3ab5-9f0b-204d-ffb0-e1de079fc4f9",
+        "fromColumn": "Order Date",
+        "fromTable": "kafka_stream_data",
+        "toColumn": "Date",
+        "toTable": "date_dimension"
       }
     ],
     "sourceQueryCulture": "en-US",
@@ -130,9 +137,18 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDecimal\":true}"
               }
             ],
-            "dataType": "int64",
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "double",
             "formatString": "0",
             "lineageTag": "fbcd8d14-50ce-43d5-b573-d165274af5f7",
             "sourceColumn": "Quantity",
@@ -146,13 +162,15 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
+              }
+            ],
+            "changedProperties": [
               {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
+                "property": "FormatString"
               }
             ],
             "dataType": "double",
+            "formatString": "0.00",
             "lineageTag": "d30497d2-ca47-4989-879c-850640c0b7c6",
             "sourceColumn": "Price",
             "sourceLineageTag": "Price",
@@ -215,10 +233,19 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "FormatString"
               }
             ],
             "dataType": "dateTime",
-            "formatString": "General Date",
+            "formatString": "\\S",
             "lineageTag": "4bbff8c3-2f09-4698-b098-4914b667768a",
             "sourceColumn": "EventProcessedUtcTime",
             "sourceLineageTag": "EventProcessedUtcTime",
@@ -247,10 +274,19 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "FormatString"
               }
             ],
             "dataType": "dateTime",
-            "formatString": "General Date",
+            "formatString": "\\S",
             "lineageTag": "760742df-08ac-42c2-9d28-097b9d197cb1",
             "sourceColumn": "EventEnqueuedUtcTime",
             "sourceLineageTag": "EventEnqueuedUtcTime",
@@ -328,6 +364,206 @@
           }
         ],
         "sourceLineageTag": "[dbo].[product_details]"
+      },
+      {
+        "name": "date_dimension",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "DateKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8d859e46-0d73-40b8-8acf-20e115c065a8",
+            "sourceColumn": "DateKey",
+            "sourceLineageTag": "DateKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isCustom\":true}"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              },
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "4d65a28e-2878-4851-a39a-9b20dfe07a91",
+            "sourceColumn": "Date",
+            "sourceLineageTag": "Date",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "68a2448b-431f-4ac0-95bb-bc67edf3ec30",
+            "sourceColumn": "Year",
+            "sourceLineageTag": "Year",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "01c2f3a5-3153-4f6e-92bc-49262ef1b4a4",
+            "sourceColumn": "Quarter",
+            "sourceLineageTag": "Quarter",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bcbb09ae-472d-41ea-a41f-373b0438d54f",
+            "sourceColumn": "Month",
+            "sourceLineageTag": "Month",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "152b3fb6-15ad-4509-8210-1434775d97f5",
+            "sourceColumn": "Day",
+            "sourceLineageTag": "Day",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Weekday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "943e502c-01a3-4a0d-b83c-567cd25384fc",
+            "sourceColumn": "Weekday",
+            "sourceLineageTag": "Weekday",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WeekOfYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "59d632dd-5c42-4254-83f1-9ce521d2629a",
+            "sourceColumn": "WeekOfYear",
+            "sourceLineageTag": "WeekOfYear",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f4f8ce38-a0ca-4c02-87d0-68b2e95c76d6",
+            "sourceColumn": "DayName",
+            "sourceLineageTag": "DayName",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsHoliday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "685b3c11-cb99-4fce-83c9-56b0332e1574",
+            "sourceColumn": "IsHoliday",
+            "sourceLineageTag": "IsHoliday",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "14bb95e5-9ee6-4c34-9034-4f0bf0ebc66b",
+        "partitions": [
+          {
+            "name": "date_dimension",
+            "mode": "directLake",
+            "source": {
+              "entityName": "date_dimension",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[date_dimension]"
       }
     ]
   }
