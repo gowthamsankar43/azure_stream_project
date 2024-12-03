@@ -1,6 +1,7 @@
 # azure_stream_project
 Azure streaming etl pipeline with Kafka , ADF, Datalake, and Databricks
-![image](https://github.com/user-attachments/assets/803c547c-40fd-4271-abec-7077af522e04)
+![Screenshot (16)](https://github.com/user-attachments/assets/f9b0a9ee-e295-4afa-a156-c8e0e6341944)
+
  An simulated e-commerce platform that processing of customer orders in real-time.
 The system must: 
 1. Handle real-time communication between order, inventory, and shipping microservices. 
