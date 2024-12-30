@@ -3,6 +3,7 @@
 I built a real-time analytics pipeline for an e-commerce platform using Azure technologies. This pipeline ingests, processes, and stores customer order data, enabling real-time insights into customer behavior.
 
 ## Key Components:
+![Pipeline](https://github.com/user-attachments/assets/0cff7b82-3c43-4711-a60e-b195c5300945)
 
 * **Data Generation:** I used Python and the Faker library to simulate real-time order data, mimicking a live e-commerce platform.
 * **Kafka Streaming:** A Confluent Kafka cluster acts as the backbone for real-time data ingestion. It efficiently captures and streams order data.
