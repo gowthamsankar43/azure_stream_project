@@ -1,6 +1,6 @@
 # Building a Real-Time E-commerce Analytics Pipeline with Azure
 
-I'm thrilled to share my recent project where I built a real-time analytics pipeline for an e-commerce platform using Azure technologies. This pipeline ingests, processes, and stores customer order data, enabling real-time insights into customer behavior.
+I built a real-time analytics pipeline for an e-commerce platform using Azure technologies. This pipeline ingests, processes, and stores customer order data, enabling real-time insights into customer behavior.
 
 ## Key Components:
 
