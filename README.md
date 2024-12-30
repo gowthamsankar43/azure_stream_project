@@ -11,6 +11,7 @@ I'm thrilled to share my recent project where I built a real-time analytics pipe
     * **Azure Data Lake Storage:** The processed data is stored in Azure Data Lake Storage for efficient storage and future analysis.
     * **Azure Databricks:** I leveraged Azure Databricks for data transformation and manipulation within the data lake.
 * **Real-time Power BI Dashboard:** A visually appealing Power BI dashboard displays key order metrics directly from the data lake, providing real-time insights into customer behavior.
+![dashboard](https://github.com/user-attachments/assets/01ab717e-68f0-4020-88d9-97d59e91b323)
 
 This project showcases the power of Azure services in building robust and scalable real-time analytics pipelines. By combining Kafka, Azure Fabric, and Power BI, I gained valuable experience in building data-driven solutions for e-commerce platforms.
 
